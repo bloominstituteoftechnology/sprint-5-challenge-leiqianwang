@@ -9,7 +9,6 @@ async function sprintChallenge5() { // Note the async keyword, in case you wish 
   footer.textContent = `© BLOOM INSTITUTE OF TECHNOLOGY ${currentYear}`
 
   
-  
   // eslint-disable-next-line no-undef
   const learnerResponse = await axios.get('http://localhost:3003/api/learners');
   // eslint-disable-next-line no-undef
@@ -55,8 +54,7 @@ async function sprintChallenge5() { // Note the async keyword, in case you wish 
         h4.addEventListener('click', (e) => {
           if(div.classList.contains('selected')){
             e.stopPropagation();
-          }
-          
+          }        
              h4.classList.toggle('closed');
              h4.classList.toggle('open');
         });
@@ -67,17 +65,16 @@ async function sprintChallenge5() { // Note the async keyword, in case you wish 
                  li.textContent = `${mentor.firstName} ${mentor.lastName}`;
                  ul.appendChild(li);
             }
-
        
        //div.appendChild(learnerInfo);
        div.appendChild(learnerName);
-      div.appendChild(otherDiv);
+       div.appendChild(otherDiv);
        div.appendChild(h4);
        div.appendChild(ul);
 
 
        div.addEventListener('click', () => {
-           const cards = document.querySelectorAll('.cards');
+           const cards = document.querySelectorAll('.card');
            const isSelected = div.classList.contains('selected');
               for(let card of cards) {
                 card.classList.remove('selected');
@@ -98,8 +95,7 @@ async function sprintChallenge5() { // Note the async keyword, in case you wish 
        });
        return div;
    }
- 
-    
+  
 
   // 👆 WORK WORK ABOVE THIS LINE 👆
 
